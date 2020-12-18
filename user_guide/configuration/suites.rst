@@ -17,14 +17,14 @@ really powerful and ``behat.yml`` makes them that much more powerful:
     default:
         suites:
             core_features:
-                paths:    [ %paths.base%/features/core ]
+                paths:    [ "%paths.base%/features/core" ]
                 contexts: [ CoreDomainContext ]
             user_features:
-                paths:    [ %paths.base%/features/web ]
+                paths:    [ "%paths.base%/features/web" ]
                 filters:  { role: user }
                 contexts: [ UserContext ]
             admin_features:
-                paths:    [ %paths.base%/features/web ]
+                paths:    [ "%paths.base%/features/web" ]
                 filters:  { role: admin }
                 contexts: [ AdminContext ]
 
@@ -42,9 +42,9 @@ configuration:
         suites:
             core_features:
                 paths:
-                    - %paths.base%/features
-                    - %paths.base%/test/features
-                    - %paths.base%/vendor/.../features
+                    - "%paths.base%/features"
+                    - "%paths.base%/test/features"
+                    - "%paths.base%/vendor/.../features"
 
 As you might imagine, this option tells Behat where to search for test features.
 You could, for example, tell Behat to look into the
@@ -57,7 +57,7 @@ You could, for example, tell Behat to look into the
     default:
         suites:
             web_features:
-                paths:    [ %paths.base%/features/web ]
+                paths:    [ "%paths.base%/features/web" ]
                 contexts: [ WebContext ]
 
 You then might want to also describe some API-specific features in
@@ -70,10 +70,10 @@ You then might want to also describe some API-specific features in
     default:
         suites:
             web_features:
-                paths:    [ %paths.base%/features/web ]
+                paths:    [ "%paths.base%/features/web" ]
                 contexts: [ WebContext ]
             api_features:
-                paths:    [ %paths.base%/features/api ]
+                paths:    [ "%paths.base%/features/api" ]
                 contexts: [ ApiContext ]
 
 This will cause Behat to:
@@ -109,12 +109,12 @@ features with specific tag (or name) in specific contexts:
     default:
         suites:
             web_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ WebContext ]
                 filters:
                     tags: @web
             api_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ ApiContext ]
                 filters:
                     tags: @api
@@ -133,12 +133,12 @@ filter. That means, you can now have nice actor-based suites:
     default:
         suites:
             user_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ UserContext ]
                 filters:
                     role: user
             admin_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ AdminContext ]
                 filters:
                     role: admin
@@ -204,10 +204,10 @@ develop different layers of your application with Behat:
     default:
         suites:
             domain_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ DomainContext ]
             web_features:
-                paths:    [ %paths.base%/features ]
+                paths:    [ "%paths.base%/features" ]
                 contexts: [ WebContext ]
                 filters:
                     tags: @web
